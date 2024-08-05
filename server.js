@@ -2,11 +2,8 @@ const express = require('express');
 const bcrypt = require('bcryptjs');
 require('dotenv').config();
 const app = express();
-/**
- * import the authCheck middleware
- */
+
 const authCheck = require('./middleware/auth_check.js');
-// const port = process.env.PORT_CONNECTION;
 
 app.use(authCheck);
 
@@ -34,6 +31,4 @@ app.get('/signup', (req, res) => {
     res.send('Sign Up page');
 });
 
-app.listen(port, () => {
-    console.log(`Server is running on port: ${port}`);
-});
+module.exports = app;
