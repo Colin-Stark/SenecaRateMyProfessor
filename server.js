@@ -4,8 +4,8 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const app = express();
 
-const { authCheck } = require('./middleware/auth_check.js');
-const { User } = require('./Mongo/schemas.js');
+const authCheck = require('./middleware/auth_check');
+const User = require('./Mongo/schemas');
 
 app.use(authCheck);
 
