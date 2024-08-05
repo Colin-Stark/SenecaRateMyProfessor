@@ -6,7 +6,7 @@ const app = express();
  * import the authCheck middleware
  */
 const authCheck = require('./middleware/auth_check.js');
-const port = process.env.PORT_CONNECTION;
+// const port = process.env.PORT_CONNECTION;
 
 app.use(authCheck);
 
