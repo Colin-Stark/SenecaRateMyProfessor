@@ -7,8 +7,15 @@ const userSchema = new Schema(
     {
         firstName: String,
         lastName: String,
-        email: String,
-        password: String,
+        email: {
+            type: String,
+            required: true,
+            unique: true,
+        },
+        password: {
+            type: String,
+            required: true,
+        },
         profileImage: String,
         isLoggedIn: Boolean,
         isVerified: Boolean,
