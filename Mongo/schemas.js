@@ -17,11 +17,6 @@ const userSchema = new Schema(
             required: true,
         },
         profileImage: String,
-
-        /**
-         * Ensure that the user is created with the default 
-         * values of `isLoggedIn` and `isVerified` as `false
-         */
         isLoggedIn: {
             type: Boolean,
             default: false,
@@ -32,13 +27,7 @@ const userSchema = new Schema(
         },
     }
 );
-
-/**
- * Enforce Email Unique Constraint
- */
 userSchema.index({ email: 1 }, { unique: true });
-
 const User = mongoose.model("User", userSchema);
-
 module.exports = User;
 
