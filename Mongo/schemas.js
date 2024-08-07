@@ -17,8 +17,14 @@ const userSchema = new Schema(
             required: true,
         },
         profileImage: String,
-        isLoggedIn: Boolean,
-        isVerified: Boolean,
+        isLoggedIn: {
+            type: Boolean,
+            default: false,
+        },
+        isVerified: {
+            type: Boolean,
+            default: false,
+        },
     }
 );
 
